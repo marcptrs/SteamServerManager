@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SteamServerManager.Application</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <AssemblyName>SteamServerManager.Application</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Common\Behaviours\" />
+    <None Remove="Common\Exceptions\" />
+    <None Remove="Common\Services\" />
+    <None Remove="Common\Services\Data\" />
+    <None Remove="Common\Services\Identity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Behaviours\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Services\" />
+    <Folder Include="Common\Services\Data\" />
+    <Folder Include="Common\Services\Identity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+</Project>
