@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebUI.Server.Controllers;
+namespace SteamServerManager.WebUI.Server.Controllers;
 
 public class OidcConfigurationController : Controller
 {

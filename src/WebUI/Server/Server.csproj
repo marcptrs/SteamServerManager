@@ -6,27 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>WebUI.Server-88ebbc41-083b-4157-862f-fad2601657c7</UserSecretsId>
     <RootNamespace>SteamServerManager.WebUI.Server</RootNamespace>
+    <AssemblyName>SteamServerManager.WebUI.Server</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <AssemblyName>SteamServerManager.WebUI.Server</AssemblyName>
-  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
   <ItemGroup>
-    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Filters\" />
-    <None Remove="Services\" />
-    <None Remove="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.3" />
@@ -42,10 +29,5 @@
     <ProjectReference Include="..\..\Application\Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Client\Client.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Filters\" />
-    <Folder Include="Services\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
