@@ -29,7 +29,7 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse>
 
             _logger.LogError(
                 ex,
-                "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}",
+                "SteamServerManager Request: Unhandled Exception for Request {Name} {@Request}",
                 requestName,
                 request);
 

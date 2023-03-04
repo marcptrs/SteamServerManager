@@ -1,5 +1,7 @@
 using FluentValidation;
 using MediatR;
+using ValidationException
+    = SteamServerManager.Application.Common.Exceptions.ValidationException;
 
 namespace SteamServerManager.Application.Common.Behaviours;
 

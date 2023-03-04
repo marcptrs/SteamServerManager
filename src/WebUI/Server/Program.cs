@@ -1,11 +1,8 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.EntityFrameworkCore;
 using SteamServerManager.Application.Common.Services.Identity;
 using SteamServerManager.Infrastructure;
 using SteamServerManager.Infrastructure.Data;
-using SteamServerManager.Infrastructure.Identity;
 using SteamServerManager.WebUI.Server.Services;
 using SteamServerManager.WebUI.Shared.Authorization;
 
@@ -73,7 +70,6 @@ app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 app.MapRazorPages();
 app.MapControllers();

@@ -357,3 +357,6 @@ MigrationBackup/
 *.sqlite3
 *.db-shm
 *.db-wal
+
+# Rider Related
+.idea/

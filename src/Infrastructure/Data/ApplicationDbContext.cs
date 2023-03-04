@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SteamServerManager.Application.Common.Services.Data;
+using SteamServerManager.Domain.Entities;
 using SteamServerManager.Infrastructure.Data.Interceptors;
 using SteamServerManager.Infrastructure.Identity;
 
@@ -23,6 +24,8 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser, A
         _mediator = mediator;
         _auditableEntitySaveChangesInterceptor = auditableEntitySaveChangesInterceptor;
     }
+    
+    public DbSet<ApplicationSetting> ApplicationSettings => Set<ApplicationSetting>();
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
