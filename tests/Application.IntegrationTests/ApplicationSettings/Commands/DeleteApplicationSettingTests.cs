@@ -8,11 +8,13 @@ namespace SteamServerManager.Application.IntegrationTests.ApplicationSettings.Co
 using static Testing;
 
 [TestFixture]
-public class DeleteApplicationSettingTests
+public class DeleteApplicationSettingTests : BaseTestFixture
 {
     [Test]
     public async Task ShouldRequireValidApplicationSettingId()
     {
+        await RunAsDefaultUserAsync();
+        
         var command = new DeleteApplicationSettingCommand(0);
 
         await FluentActions.Invoking(() =>
@@ -22,6 +24,8 @@ public class DeleteApplicationSettingTests
     [Test]
     public async Task ShouldDeleteApplicationSetting()
     {
+        await RunAsDefaultUserAsync();
+        
         var id = await SendAsync(new CreateApplicationSettingCommand(
             new CreateApplicationSettingRequest
             {

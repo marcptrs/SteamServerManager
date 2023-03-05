@@ -14,7 +14,7 @@ public partial class Testing
 {
     private static WebApplicationFactory<Program> _factory = null!;
     private static IConfiguration _configuration = null!;
-    private static IServiceScopeFactory _scopeFactory = null!;
+    internal static IServiceScopeFactory _scopeFactory = null!;
     private static string? _currentUserId;
 
     [OneTimeSetUp]
@@ -23,12 +23,6 @@ public partial class Testing
         _factory = new CustomWebApplicationFactory();
         _scopeFactory = _factory.Services.GetRequiredService<IServiceScopeFactory>();
         _configuration = _factory.Services.GetRequiredService<IConfiguration>();
-
-        // Ensure the SQLite test db is dropped and recreated on each run
-        using var scope = _scopeFactory.CreateScope();
-        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        context.Database.EnsureDeleted();
-        context.Database.EnsureCreated();
     }
     
     public static async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)

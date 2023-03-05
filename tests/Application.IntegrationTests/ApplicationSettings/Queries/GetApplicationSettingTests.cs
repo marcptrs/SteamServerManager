@@ -7,7 +7,7 @@ namespace SteamServerManager.Application.IntegrationTests.ApplicationSettings.Qu
 using static Testing;
 
 [TestFixture]
-public class GetApplicationSettingTests
+public class GetApplicationSettingTests : BaseTestFixture
 {
     [Test]
     public async Task ShouldReturnOneApplicationSetting()

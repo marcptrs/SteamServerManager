@@ -8,11 +8,13 @@ namespace SteamServerManager.Application.IntegrationTests.ApplicationSettings.Co
 using static Testing;
 
 [TestFixture]
-public class UpdateApplicationSettingTests
+public class UpdateApplicationSettingTests : BaseTestFixture
 {
 	[Test]
 	public async Task ShouldRequireMinimumFields()
     {
+        await RunAsDefaultUserAsync();
+        
         var command = new UpdateApplicationSettingCommand(
             new UpdateApplicationSettingRequest());
 
